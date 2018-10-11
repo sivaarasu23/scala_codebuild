@@ -8,3 +8,4 @@ Resources:
       Handler: HelloWorld::main
       Runtime: java 8
       CodeUri: ./src/main/scala/
+      Role: arn:aws:iam::738098668624:role/cloudformation-lambda-execution-role
