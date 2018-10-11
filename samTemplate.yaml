@@ -7,4 +7,4 @@ Resources:
     Properties:
       Handler: HelloWorld::main
       Runtime: java 8
-      CodeUri: https://s3-ap-southeast-1.amazonaws.com/codepipeline-ap-southeast-1-355963742768/scala-lambda-deploym/MyApp/xjSth2z.zip
+      CodeUri: ./
