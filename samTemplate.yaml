@@ -7,4 +7,3 @@ Resources:
     Properties:
       Handler: HelloWorld::main
       Runtime: java 8
-      CodeUri: ./target/scala-2.12/HelloDocker-Sbt-assembly-1.0.jar
