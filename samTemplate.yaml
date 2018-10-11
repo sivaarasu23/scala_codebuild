@@ -7,4 +7,4 @@ Resources:
     Properties:
       Handler: HelloWorld::main
       Runtime: java 8
-      CodeUri: ./src
+      CodeUri: ./src/main/scala/
