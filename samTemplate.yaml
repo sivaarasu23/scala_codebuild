@@ -2,35 +2,9 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: scala hello world
 Resources:
-  S3Bucket:
-    Description: Creating Amazon S3 bucket for AWS CodePipeline artifacts
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
-    Properties:
-      BucketName: !Sub "serverless-app-scala"
-      VersioningConfiguration:
-        Status: Enabled
-  S3ArtifactBucketPolicy:
-    DependsOn: [S3Bucket]
-    Description: Setting Amazon S3 bucket policy for AWS CodePipeline access
-    Type: AWS::S3::BucketPolicy
-    Properties:
-      Bucket: !Ref S3Bucket
-      PolicyDocument:
-        Version: "2012-10-17"
-        Id: SSEAndSSLPolicy
-        Statement:
-        - Sid: DenyInsecureConnections
-          Effect: Deny
-          Principal: "*"
-          Action: s3:*
-          Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
-          Condition:
-            Bool:
-              aws:SecureTransport: false
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: HelloWorld::main
       Runtime: java 8
-      CodeUri: ./
+      CodeUri: ./target/scala-2.12/HelloDocker-Sbt-assembly-1.0.jar
